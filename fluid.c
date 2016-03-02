@@ -110,7 +110,7 @@ void start_simulation()
     #ifdef RASPI
     params.number_fluid_particles_global = 1500;
     #else
-    params.number_fluid_particles_global = 1500;
+    params.number_fluid_particles_global = 15000;
     #endif
 
     // Boundary box
@@ -141,7 +141,7 @@ void start_simulation()
     float area = (water_volume_global.max_x - water_volume_global.min_x) * (water_volume_global.max_y - water_volume_global.min_y);
 
     // Initial spacing between particles
-    float spacing_particle = pow(area/params.number_fluid_particles_global,1.0/2.0);
+    float spacing_particle = pow(area/params.number_fluid_particles_global, 1.0/2.0);
 
     // Divide problem set amongst nodes
     partitionProblem(&boundary_global, &water_volume_global, &start_x, &number_particles_x, spacing_particle, &params);

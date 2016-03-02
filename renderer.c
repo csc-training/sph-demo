@@ -220,8 +220,8 @@ int start_renderer()
     float particle_diameter_pixels = gl_state.screen_width * 0.0125;
     float liquid_particle_diameter_pixels = gl_state.screen_width * 0.020;
     #else
-    float particle_diameter_pixels = gl_state.screen_width * 0.0125;
-    float liquid_particle_diameter_pixels = gl_state.screen_width * 0.020;
+    float particle_diameter_pixels = gl_state.screen_width * 0.0125 * 0.3;
+    float liquid_particle_diameter_pixels = gl_state.screen_width * 0.020 * 0.5;
     #endif
 
     MPI_Status status;
