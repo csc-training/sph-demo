@@ -318,7 +318,7 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, unselected_color, 1.0f - 100.0f * sx, 1.0f - 50.0f * sy, sx, sy);
 
 	// Gravity
-	sprintf( buffer, "Gravity: %.1f", gravity);
+	sprintf( buffer, "Painovoima: %.1f", gravity);
 	if(selected_param == GRAVITY)
 		color = selected_color;
 	else
@@ -326,7 +326,7 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 50.0f * sy, sx, sy);
 
 	// Viscocity
-	sprintf( buffer, "Viscosity: %.1f", viscosity);
+	sprintf( buffer, "Viskositeetti: %.1f", viscosity);
 	if(selected_param == VISCOSITY)
 		color = selected_color;
 	else
@@ -334,7 +334,7 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 100.0f * sy, sx, sy);
 
 	// Density
-	sprintf( buffer, "Density: %.1f", density);
+	sprintf( buffer, "Tiheys: %.1f", density);
 	if(selected_param == DENSITY)
 		color = selected_color;
 	else
@@ -342,7 +342,7 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 150.0f * sy, sx, sy);
 
 	// Pressure
-	sprintf( buffer, "Pressure: %.1f", pressure);
+	sprintf( buffer, "Paine: %.1f", pressure);
 	if(selected_param == PRESSURE)
 		color = selected_color;
 	else
@@ -350,7 +350,7 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 200.0f * sy, sx, sy);
 
 	// Elasticity
-	sprintf( buffer, "Elasticity: %.1f", elasticity);
+	sprintf( buffer, "Elastisuus: %.1f", elasticity);
 	if(selected_param == ELASTICITY)
 		color = selected_color;
 	else

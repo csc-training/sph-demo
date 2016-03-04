@@ -80,6 +80,8 @@ void init_exit_menu(exit_menu_t *state, gl_t *gl_state)
 
     #ifdef RASPI
     init_cursor(state->cursor_state, gl_state, "SPH/images/cursor.png", cursor_width, cursor_height);
+    #elif defined(SISUNEN)
+    init_cursor(state->cursor_state, gl_state, "images/cursor_csc.png", cursor_width, cursor_height);
     #else
     init_cursor(state->cursor_state, gl_state, "images/cursor.png", cursor_width, cursor_height); 
     #endif
