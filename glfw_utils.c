@@ -64,9 +64,6 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 
         switch(key)
         { 
-            case GLFW_KEY_ESCAPE:
-                toggle_quit_mode(render_state);              
-	        break;
             case GLFW_KEY_RIGHT:
                 increase_parameter(render_state);
                 break;
@@ -79,10 +76,18 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
             case GLFW_KEY_DOWN:
                 move_parameter_down(render_state);
                 break;
+#ifdef MACOS
             case GLFW_KEY_LEFT_BRACKET:
+#else
+            case GLFW_KEY_PAGE_DOWN:
+#endif
                 remove_partition(render_state);
                 break;
+#ifdef MACOS
             case GLFW_KEY_RIGHT_BRACKET:
+#else
+            case GLFW_KEY_PAGE_UP:
+#endif
                 add_partition(render_state);
                 break;
             case GLFW_KEY_X:
@@ -92,9 +97,11 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
                 set_fluid_y(render_state);
                 break;
             case GLFW_KEY_A:
-                if(render_state->quit_mode)
-                    exit_with_selected_program(render_state, window);
                 set_fluid_a(render_state);
+                break;
+            case GLFW_KEY_Q:
+                glfwSetWindowShouldClose(window, GL_TRUE);
+                render_state->return_value = 0;
                 break;
             case GLFW_KEY_B:
                 set_fluid_b(render_state);

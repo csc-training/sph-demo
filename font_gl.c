@@ -318,7 +318,11 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, unselected_color, 1.0f - 100.0f * sx, 1.0f - 50.0f * sy, sx, sy);
 
 	// Gravity
+        #ifdef LANG_FI
 	sprintf( buffer, "Painovoima: %.1f", gravity);
+        #else
+	sprintf( buffer, "Gravity: %.1f", gravity);
+	#endif
 	if(selected_param == GRAVITY)
 		color = selected_color;
 	else
@@ -326,7 +330,12 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 50.0f * sy, sx, sy);
 
 	// Viscocity
+        #ifdef LANG_FI
 	sprintf( buffer, "Viskositeetti: %.1f", viscosity);
+        #else
+	sprintf( buffer, "Viscosity: %.1f", viscosity);
+	#endif
+
 	if(selected_param == VISCOSITY)
 		color = selected_color;
 	else
@@ -334,7 +343,12 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 100.0f * sy, sx, sy);
 
 	// Density
+        #ifdef LANG_FI
 	sprintf( buffer, "Tiheys: %.1f", density);
+        #else
+	sprintf( buffer, "Density: %.1f", density);
+	#endif
+
 	if(selected_param == DENSITY)
 		color = selected_color;
 	else
@@ -342,7 +356,12 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 150.0f * sy, sx, sy);
 
 	// Pressure
+        #ifdef LANG_FI
 	sprintf( buffer, "Paine: %.1f", pressure);
+        #else
+	sprintf( buffer, "Pressure: %.1f", pressure);
+	#endif
+
 	if(selected_param == PRESSURE)
 		color = selected_color;
 	else
@@ -350,7 +369,12 @@ void render_all_text(font_t *state, render_t *render_state, double fps)
 	n += add_text_coords(state, buffer, verts + n, color, -1.0f + 8.0f * sx, 1.0f - 200.0f * sy, sx, sy);
 
 	// Elasticity
+        #ifdef LANG_FI
 	sprintf( buffer, "Elastisuus: %.1f", elasticity);
+        #else
+	sprintf( buffer, "Elasticity: %.1f", elasticity);
+	#endif
+
 	if(selected_param == ELASTICITY)
 		color = selected_color;
 	else

@@ -3,6 +3,8 @@ TinySPH is a parallel 2D Smoothed Particle Hydrodynamics(SPH) code, designed to 
 
 If you find this code useful, find a bug, or use this code in an interesting way i'd love to hear about it, drop me a line at simpsonab@ornl.gov and let me know!
 
+
+
 ## Screenshot
 The screenshot below shows TinySPH running on a four core MacBook Pro, running with 7 compute MPI processes and 1 MPI render process. The default rendering mode shows a reconstructed liquid surface.
 
@@ -24,6 +26,14 @@ It is assumed that the XCode toolchain has been installed, this is freely availa
     $ brew install homebrew/versions/glfw3
     $ brew install glew
     $ brew install freetype
+
+### Linux
+
+General Linux version requires glfw, glew and freetype (development)
+libraries. In Centos 7 install as
+
+    $ sudo yum install glfw-devel glew-devel freetype-devel
+
 
 ### Raspberry Pi
 
@@ -59,7 +69,7 @@ The input controls are set in `GLFW_utils.c` and `EGL_utils.c` for GLFW and Rasp
 
 Although subject to change generally keys should operate as follows:
 
-* The `esc` key toggles the exit menu, hover the oak leaf over the `terminal` image and press `a` to exit.
+* The `q` key exits the code
 
 * Arrow keys should change the paramaters in the top left of the screen
 
@@ -67,7 +77,8 @@ Although subject to change generally keys should operate as follows:
 
 * `a`,`b`,`x`,`y` are fluid parameter presets
 
-* on Mac `[` `]` controls the number of processes while on the Pi it is page up and page down.
+* on Mac `[` `]` controls the number of processes while on the Pi and
+  Linux it is page up and page down.
 
 * `l` toggles between particle and liquid surface rendering methods
 
