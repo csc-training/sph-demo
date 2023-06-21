@@ -1,12 +1,22 @@
 CC=mpicc
-CLIBS= -lglfw -lGL -lGLEW -lfreetype
+CLIBS= -lglfw -lGL -lGLEW -lfreetype -lm
 CINCLUDES= -I/usr/include/freetype2
-CFLAGS= -DCSC -DGLFW -O3 -ffast-math -lm
+CFLAGS= -DCSC -DGLFW -O3 -ffast-math -fcommon
 # CFLAGS= -DCSC -DLANG_FI -DGLFW -O3 -ffast-math -lm
 
-all:
+EXE=bin/sph.out
+
+OBJS=ogl_utils.o dividers_gl.o particles_gl.o liquid_gl.o mover_gl.o font_gl.o lodepng.o exit_menu_gl.o rectangle_gl.o renderer.o glfw_utils.o image_gl.o cursor_gl.o background_gl.o controls.o geometry.o hash.o communication.o fluid.o
+
+all: $(EXE)
+
+$(EXE): $(OBJS)
 	mkdir -p bin
-	$(CC) $(CINCLUDES) $(CFLAGS) $(CLIBS) ogl_utils.c dividers_gl.c particles_gl.c liquid_gl.c mover_gl.c font_gl.c lodepng.c exit_menu_gl.c rectangle_gl.c renderer.c glfw_utils.c image_gl.c cursor_gl.c background_gl.c controls.c geometry.c hash.c communication.c fluid.c -o bin/sph.out
+	$(CC) $(OBJS) -o bin/sph.out $(CLIBS)
+
+%.o: %.c
+	$(CC) $(CINCLUDES) $(CFLAGS) -c $< -o $@
+
 clean:
 	rm -f ./sph.out
 	rm -f ./*.o

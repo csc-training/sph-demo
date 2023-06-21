@@ -34,6 +34,10 @@ libraries. In Centos 7 install as
 
     $ sudo yum install glfw-devel glew-devel freetype-devel
 
+In Ubuntu 22.04 install as
+
+    $ sudo apt install libfreetype-dev libglew-dev
+
 
 ### Raspberry Pi
 
