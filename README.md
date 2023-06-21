@@ -49,6 +49,21 @@ On the RaspberryPi the following packages must be installed, all of which are av
 ## Compile and run
 Once the prerequisites have been installed TitanSPH can be compiled and run.
 
+### Linux
+
+To compile
+
+    $ make -f makefile_linux
+    
+Finnish text for simulation parameters can be specifid with `-DLANG_FI` preprocessor macro
+
+To run on a 4 core:
+
+    $ mpiexec -n 4 ./bin/sph.out
+    
+Note that the location of shaders is hard-coded, so the code needs to be run from the source directory
+
+
 ### Macintosh
 
 To compile
